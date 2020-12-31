@@ -35,8 +35,8 @@ extern "C" int psp_kbd_save_mapping(char *name);
 extern "C" void sim_kbd_load(void);
 extern "C" int sim_load_settings(void);
 
-extern CDiskDevice *pDrive1;
-extern CDiskDevice *pDrive2;
+//extern CDiskDevice *pDrive1;
+//extern CDiskDevice *pDrive2;
 
  int psp_screenshot_mode = 0;
 

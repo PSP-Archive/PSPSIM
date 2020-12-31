@@ -102,7 +102,7 @@ MORE_CFLAGS = -O2 -DUSE_ZLIB -DUSE_LOWRES -DUSE_SAASOUND \
 CFLAGS = $(DEFAULT_CFLAGS) $(MORE_CFLAGS)
 CXXFLAGS = $(DEFAULT_CFLAGS) $(MORE_CFLAGS) -fno-exceptions -fno-rtti
 
-LIBS += -lpspirkeyb -lstdc++ -lpsppower -lSDL_image -lSDL -lpng -ljpeg -lpspaudio -lpspgu -lpsphprm -lz -lm
+LIBS += -lstdc++ -lSDL_image -lSDL -lGL -lpsprtc -lpspvfpu -lpspirkeyb -lpsppower -lpng -ljpeg -lpspaudio -lpspgu -lpsphprm -lz -lm
 
 BUILD_PRX=1
 

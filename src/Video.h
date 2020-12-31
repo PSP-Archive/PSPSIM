@@ -33,7 +33,7 @@ class Video
 
 
 extern WORD aulPalette[], aulScanline[];
-extern SDL_Surface *back_surface;
+//extern SDL_Surface *back_surface;
 
 
 #endif  // VIDEO_H
