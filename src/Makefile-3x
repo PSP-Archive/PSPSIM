@@ -1,0 +1,127 @@
+#
+# SimCoupe port on PSP 
+#
+# Copyright (C) 2006 Ludovic Jacomme (ludovic.jacomme@gmail.com)
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+TARGET = pspsim
+PSPSDK = $(shell psp-config --pspsdk-path)
+PSPBIN = $(shell psp-config --psp-prefix)/bin
+SDL_CONFIG = $(PSPBIN)/sdl-config
+OBJS =  \
+Action.o \
+ATA.o \
+Atom.o \
+CDisk.o \
+CDrive.o \
+Clock.o \
+CPU.o \
+CScreen.o \
+CStream.o \
+Disassem.o \
+Expr.o \
+Font.o \
+Frame.o \
+GUI.o \
+GUIDlg.o \
+GUIIcons.o \
+HardDisk.o \
+IO.o \
+Main.o \
+Memory.o \
+Mouse.o \
+Options.o \
+Parallel.o \
+PNG.o \
+Profile.o \
+SDIDE.o \
+Util.o \
+YATBus.o \
+SAASound.o \
+unzip.o \
+ioapi.o \
+Display.o \
+Floppy.o \
+IDEDisk.o \
+Input.o \
+MIDI.o \
+Sound.o \
+OSD.o \
+UI.o \
+Video.o \
+simcoupec.o \
+psp_fmgr.o \
+psp_main.o \
+psp_kbd.o  \
+psp_danzeff.o \
+psp_sdl.o \
+psp_gu.o \
+psp_font.o \
+psp_menu.o  \
+psp_menu_help.o \
+psp_menu_set.o  \
+psp_menu_kbd.o \
+psp_battery.o \
+psp_irkeyb.o \
+SAAAmp.o \
+SAAEnv.o \
+SAAFreq.o \
+SAAImpl.o \
+SAANoise.o \
+SAASndC.o \
+LibSAASound.o
+
+
+DEFAULT_CFLAGS = $(shell $(SDL_CONFIG) --cflags)
+
+PSP_FW_VERSION=371
+PSPSIM_VERSION=1.2.1
+MORE_CFLAGS = -O2 -DUSE_ZLIB -DUSE_LOWRES -DUSE_SAASOUND \
+ -funroll-loops -ffast-math -fomit-frame-pointer \
+ -fno-strength-reduce -finline-functions \
+ -fsingle-precision-constant \
+ -DPSPFW30X \
+ -DUSE_PSP_IRKEYB \
+ -DPSPSIM_VERSION=\"$(PSPSIM_VERSION)\" -DNO_STDIO_REDIRECT
+
+#   -fsingle-precision-constant -finline-functions
+
+CFLAGS = $(DEFAULT_CFLAGS) $(MORE_CFLAGS)
+CXXFLAGS = $(DEFAULT_CFLAGS) $(MORE_CFLAGS) -fno-exceptions -fno-rtti
+
+LIBS += -lpspirkeyb -lstdc++ -lpsppower -lSDL_image -lSDL -lpng -ljpeg -lpspaudio -lpspgu -lpsphprm -lz -lm
+
+BUILD_PRX=1
+
+EXTRA_TARGETS = EBOOT.PBP
+PSP_EBOOT_TITLE = PSPSIM-v$(PSPSIM_VERSION)
+PSP_EBOOT_ICON= pspsim.png
+PSP_EBOOT_PIC1= pspsim-pic.png
+
+include $(PSPSDK)/lib/build.mak
+
+all: EBOOT.PBP
+
+install: all
+	@mkdir -p /media/usbdisk/psp/game371/pspsim/
+	cp EBOOT.PBP /media/usbdisk/psp/game371/pspsim/
+
+ctags:
+	ctags *
+
+realclean:
+	/bin/rm -f $(OBJS) EBOOT.PBP PARAM.SFO __SCE__pspsim/EBOOT.PBP %__SCE__pspsim/EBOOT.PBP pspsim.elf
+

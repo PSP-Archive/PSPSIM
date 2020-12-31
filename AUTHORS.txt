@@ -1,0 +1,32 @@
+ SimCoupe : A SAM Coupe Emulator 
+
+ (Version 0.90 beta 4, released 11th July 2002)
+
+ Father of the original SimCoupe:
+    Allan Skillman <Allan.Skillman@arm.com>
+
+ Port on SDL:
+    Simon Owen   <simon.owen@simcoupe.org>
+    Dave Laundon dave.laundon@simcoupe.org>
+
+ The Z80 core, as featured in his xz80 Spectrum emulator:
+    Ian Collier <Ian.Collier@comlab.ox.ac.uk>
+
+ Super-accurate Phillips SAA 1099 chip emulator:
+    Dave Hooper <dave@rebuzz.org> (See: http://sf.net/projects/saasound)
+
+ The SAM ROMs, and permission to distribute them with the emulator:
+    Dr Andy Wright
+
+ The Simple DirectMedia Library (SDL):
+    Sam Lantinga <slouken@libsdl.org> (See: http://www.libsdl.org/)
+
+ The Allegro games programming library:
+    Shawn Hargreaves (See: http://www.talula.demon.co.uk/allegro/)
+
+ The zlib compression library:
+    Jean-loup Gailly and Mark Adler (See: http://www.gzip.org/zlib/)
+
+PSPSIM : Porting on PSP
+
+  Ludovic Jacomme (zx81.zx81@gmail.com)

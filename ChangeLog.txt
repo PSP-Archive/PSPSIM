@@ -1,0 +1,86 @@
+1.2.1
+
+- Many optimizations to speed up the emulation in 
+  z80, video and sound emulation part. 
+  Many games are now fullspeed (50 fps) even at 222Mhz !!
+- Many new render modes and screen size options
+  (normal, fit, max etc ...)
+- The emulator window can now be moved to fit the screen properly
+- Add new hotkeys to setup render mode etc ...
+- Bug fix in the low battery watchdog
+- RTrigger/LTrigger keys can be used in the keyboard
+  settings menu to navigate between Normal, LTrigger 
+  and  RTrigger compose mapping.
+- Default Hotkeys can now be set in the keyboard mapping menu
+  (useful to add hotkeys on existing/previous keyboard files)
+- Code cleaning
+
+
+1.1.1
+
+- Speed improvement for all render mode 
+  (all render modes used now the GU)
+- Automatic start when a new disk is loaded
+- Bug fix in the keyboard settings menu (d-pad can be 
+  used to move up or down in the key menu, even if the
+  virtual keyboard is displayed)
+- Analog pad can be used to scroll faster in the file
+  menu requester
+
+1.1.0
+
+- IR keyboard support !
+- Speed improvement
+- New speed limiter function
+- Add option to display fps rate
+- Now compatible with custom firmwares 3.x and PSP-slim
+- Add a simple intro splash screen  
+- Option to prevent the blue led to be displayed when 
+  L or R are pressed
+- New help menu
+- Support iso8859-1 fonts in print text functions 
+  (might be useful to translate menus in german, french ...)
+- Bug fix and code cleaning
+
+1.0.5
+
+- Bug fix: frame skip option is now saved with game settings
+  (Thanks to Nick666, who had reported me this bug)
+
+- From Mr Nick666 :
+
+  + New beautiful background images designed by Mr Nick666 !
+  + Settings files for most of all famous games ! 
+
+1.0.4
+
+- New graphical functions with new smoother render modes.
+  It uses the PSP GPU for rendering, it does not run faster, 
+  but it's a lot smoother.
+- Multiple keyboard mapping feature (Thanks to Pou-chan) :
+  You can now toggle between three differents keyboard mapping using 
+- Bug fix in Rom file requester 
+- Add help menu
+
+1.0.3
+
+- Icons and background images designed by Mr Nick666
+- Emulator menus reorganisation (new menu for settings)
+- The percent of battery left is now displayed in the emulator window
+- Add a watchdog to automatically return to the emulator menu
+  when  the battery is very low (< 5%)
+- New feature to save and load a distinct setting file for each games
+- Add keyboard change skin option 
+  (you can add your own virtual keyboard images in the graphics directory).
+- Delete files option (in the file selector)
+- Screenshots are now saved in PNG format instead of BMP 
+
+1.0.2
+
+- Add fullscreen, zoom x1.5, x1.75 and x2 mode !
+- Major speed optimizations (now full speed at 333Mhz)
+- Change default keyboard mapping
+
+1.0.1
+
+- Intial release
